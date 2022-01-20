@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício de Lógica</title>
+</head>
+<body>
+    <h1>Exercício de Lógica</h1>
+    <h2>Questão 01</h2>
+    <h2>
+        Escreva um algoritmo que armazene o valor 25 em uma variável A e o valor 47 em uma variável B. <br/>
+        A seguir (utilizando apenas atribuições entre variáveis) troque os seus conteúdos fazendo <br/>com que o 
+        valor que está em A passe para B e vice-versa. Ao final,  <br/>
+        escrever os valores que ficaram armazenados nas variáveis.
+    </h2>
+    <h3 id="answer"></h3>
+</body>
+</html>
+<script>
+    
+    var a = 25; //a armazena 25 
+    var b = 47; //b armazena 47 
+
+    var a = b; // a recebe b
+    var b = a; // b recebe a 
+
+    var answer = window.document.getElementById("answer");
+
+    //O valor renderizado é o último valor que a variável recebe. 
+    answer.innerHTML = `Valor armazenado na variável A ${a} <br/> Valor armazenado na variável B ${b}`
+
+</script>

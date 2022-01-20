@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício de Lógica</title>
+</head>
+<body>
+    <h1>Exercício de Lógica</h1>
+    
+    <h2>Questão 02</h2>
+    
+    <h3>
+        Ler um valor e escrever a mensagem É MAIOR QUE 10! se o valor lido for maior que 10, 
+        caso contrário escrever NÃO É MAIOR QUE 10!
+    </h3>
+    
+    <p>Digite um valor:</p>
+    <input type="number" name="value" id="value"><br />
+    
+    <input type="button" value="Calcular" onclick="Calculate()">
+    
+    <h3 id="answer"></h3>
+</body>
+</html>
+<script>
+    function Calculate() {
+        var value = window.document.getElementById("value").value;
+        var answer = window.document.getElementById("answer");
+
+        if (value > 10) {
+            answer.innerHTML = `O número ${value} é MAIOR que 10.` 
+        }
+
+        if (value < 10) {
+            answer.innerHTML = `O número ${value} é MENOR que 10.`
+        }
+
+        if (value == 10) {
+            answer.innerHTML = `O número ${value} é IGUAL a 10.`
+        }
+
+        var limpa = document.getElementById('value').value = '';
+    }   
+</script>

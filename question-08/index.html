@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício de Lógica</title>
+</head>
+<body>
+    <h1>Exercício de Lógica</h1>
+    
+    <h2>Questão 08</h2>
+    
+    <h3>
+        Ler 3 valores (A, B e C) representando as medidas dos lados de um triângulo e escrever <br />
+        se formam ou não um triângulo. OBS: para formar um triângulo, o valor de cada lado deve ser <br />
+        menor que a soma dos outros 2 lados.
+    </h3>
+    
+    <p>Digite o lado A do triângulo:</p>
+    <input type="number" name="sideA" value="" id="sideA">
+
+    <p>Digite o lado B do triângulo:</p>
+    <input type="number" name="sideB" value="" id="sideB">
+    
+    <p>Digite o lado C do triângulo:</p>
+    <input type="number" name="sideC" value="" id="sideC"><br />
+    
+    <input type="button" value="Calcular" onclick="Calculate()">
+    
+    <h3 id="answer"></h3>
+</body>
+</html>
+<script>
+
+    function Calculate() {
+        
+        var sideA = window.document.getElementById("sideA").value;
+        var sideB = window.document.getElementById("sideB").value;
+        var sideC = window.document.getElementById("sideC").value;
+        
+        var answer = window.document.getElementById("answer");
+
+        var sideAB = Number(sideA) + Number(sideB);
+        var sideAC = Number(sideA) + Number(sideC);
+        var sideBC = Number(sideB) + Number(sideC); 
+
+        if (sideAB && sideAC && sideBC > sideA && sideB && sideC) {
+            answer.innerHTML = `Os lados com os valores ${sideA}, ${sideB}, ${sideC}: formam um triângulo`;
+        } else {
+            answer.innerHTML = `Os lados com os valores ${sideA}, ${sideB}, ${sideC}: não formam um triângulo`;
+        }
+
+        var limpa = document.getElementById('sideA').value = '';
+        var limpa = document.getElementById('sideB').value = '';
+        var limpa = document.getElementById('sideC').value = '';
+    }
+
+</script>

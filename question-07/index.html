@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício de Lógica</title>
+</head>
+<body>
+    <h1>Exercício de Lógica</h1>
+    
+    <h2>Questão 07</h2>
+    
+    <h3>
+        A jornada de trabalho semanal de um funcionário é de 40 horas. <br/>
+        O funcionário que trabalhar mais de 40 horas receberá hora extra, 
+        cujo cálculo é o valor da hora regular com um acréscimo de 50%. <br/>
+        Escreva um algoritmo que leia o número de horas trabalhadas em um mês, o salário por hora e escreva o salário total do <br/>
+        funcionário, que deverá ser acrescido das horas extras, caso tenham sido trabalhadas 
+        (considere que o mês possua 4 semanas exatas).
+    </h3>
+    
+    <p>Digite o número de horas trabalhadas no mês:</p>
+    <input type="number" name="workedHours" id="workedHours">
+
+    <p>Digite o valor recebido por hora trabalhada:</p>
+    <input type="number" name="valueHour" id="valueHour"><br />
+    
+    <input type="button" value="Calcular" onclick="Calculate()">
+    
+    <h3 id="answer"></h3>
+</body>
+</html>
+<script>
+
+    function Calculate() {
+        
+        var workedHours = window.document.getElementById("workedHours").value;
+        var valueHour = window.document.getElementById("valueHour").value;
+        
+        var answer = window.document.getElementById("answer");
+
+        if(workedHours && valueHour > 0) {
+            var normalValue = Number(valueHour) * 160;
+        
+            var extraValue = Number(valueHour) * Number(0.5) + Number(valueHour);
+            console.log(extraValue)
+            var totalExtraValue = Number(extraValue) * Number(workedHours);
+        } else {
+            alert("Atenção não é possível calcular valores negativos")
+        }
+    
+
+        if (workedHours == 160) {
+            answer.innerHTML = `Valor total recebido por horas trabalhadas ${new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRl",}).format(normalValue)}`;
+        }
+
+        if (workedHours > 160) {
+            answer.innerHTML = `Valor total recebido por horas trabalhadas ${new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRl",}).format(totalExtraValue)}`; 
+        }
+
+        if (workedHours < 160 ) {
+            alert('Você precisa trabalhar no mínino 160 horas por mês')
+        }
+
+        var limpa = document.getElementById('workedHours').value = '';
+        var limpa = document.getElementById('valueHour').value = '';
+       
+    }
+
+</script>

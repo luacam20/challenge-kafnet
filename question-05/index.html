@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício de Lógica</title>
+</head>
+<body>
+    <h1>Exercício de Lógica</h1>
+    
+    <h2>Questão 05</h2>
+    
+    <h3>
+        Ler o ano atual e o ano de nascimento de uma pessoa. <br />
+        Escrever uma mensagem que diga se ela poderá ou não votar este ano <br />
+        (não é necessário considerar o mês em que a pessoa nasceu). <br />
+    </h3>
+
+    <h2>
+        De acordo com o artigo 14 da Constituição Federal, <br/>o voto é facultativo para jovens de 16 e 17 anos, 
+        mas passa a ser obrigatório a partir dos 18 anos.
+    </h2>
+    
+    <p>Digite o ano atual:</p>
+    <input type="number" name="currentYear" id="currentYear">
+
+    <p>Digite o ano do seu nascimento:</p>
+    <input type="number" name="yearBirth" id="yearBirth"><br />
+    
+    <input type="button" value="Posso votar ?" onclick="Calculate()">
+    
+    <h3 id="answer"></h3>
+</body>
+</html>
+<script>
+
+    function Calculate() {
+        
+        var currentYear = window.document.getElementById("currentYear").value;
+        var yearBirth = window.document.getElementById("yearBirth").value;
+        
+        var answer = window.document.getElementById("answer");
+
+        var age = Number(currentYear) - Number(yearBirth);
+ 
+        if (currentYear > yearBirth) {
+               
+            if (age < 16) {
+                answer.innerHTML = `Você tem ${age} anos, e não pode votar esse ano. Para votar é preciso ter no mínimo 16 anos.`;
+            }
+
+            if (age >= 16) {
+                answer.innerHTML = `Você tem ${age} anos, e pode votar esse ano.`;
+            }
+        
+        } else {
+            alert("Atenção o ano atual não pode ser menor ou igual ao ano de nascimento!")
+            return
+        }
+
+        var limpa = document.getElementById('currentYear').value = '';
+        var limpa = document.getElementById('yearBirth').value = '';
+       
+    }
+
+</script>

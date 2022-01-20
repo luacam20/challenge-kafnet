@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício de Lógica</title>
+</head>
+<body>
+    <h1>Exercício de Lógica</h1>
+    
+    <h2>Questão 03</h2>
+    
+    <h3>
+        Ler um valor e escrever se é positivo ou negativo (considere o valor zero como positivo).
+    </h3>
+    
+    <p>Digite um valor:</p>
+    <input type="number" name="value" id="value"><br />
+
+    <input type="button" value="Calcular" onclick="Calculate()">
+    
+    <h3 id="answer"></h3>
+</body>
+</html>
+<script>
+    function Calculate() {
+        var value = window.document.getElementById("value").value;
+        var answer = window.document.getElementById("answer");
+
+        if (value >= 0) {
+            answer.innerHTML = `O número ${value} é POSITIVO!` 
+        } 
+
+        if (value < 0) {
+            answer.innerHTML = `O número ${value} é NEGATIVO!`
+        }
+
+        var limpa = document.getElementById('value').value = '';
+   
+    }   
+</script>

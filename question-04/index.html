@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício de Lógica</title>
+</head>
+<body>
+    <h1>Exercício de Lógica</h1>
+    
+    <h2>Questão 04</h2>
+    
+    <h3>
+        Ler as notas da 1a. e 2a. avaliações de um aluno. <br />
+        Calcular a média aritmética simples e escrever uma mensagem <br />
+        que diga se o aluno foi ou não aprovado <br />
+        (considerar que nota igual ou maior que 6 o aluno é aprovado). Escrever também a média calculada 
+    </h3>
+    
+    <p>Digite a primeira nota da avaliação:</p>
+    <input type="number" name="valueTest1" id="valueTest1">
+
+    <p>Digite a segunda nota da avaliação:</p>
+    <input type="number" name="valueTest2" id="valueTest2"><br />
+    
+    <input type="button" value="Calcular média aritmética" onclick="Calculate()">
+    
+    <h3 id="answer"></h3>
+</body>
+</html>
+<script>
+    function Calculate() {
+        var valueTest1 = window.document.getElementById("valueTest1").value;
+        var valueTest2 = window.document.getElementById("valueTest2").value;
+        var answer = window.document.getElementById("answer");
+        
+        var sumNotes = Number(valueTest1) + Number(valueTest2);
+        var total = Number(sumNotes) / 2; 
+
+        if (sumNotes >= 6) {
+            answer.innerHTML = `O aluno foi APROVADO com a nota ${sumNotes}, e sua média foi ${total}.`;
+        } else {
+            answer.innerHTML = `O aluno foi REPROVADO com a nota ${sumNotes}, e sua média foi ${total}.`;
+        }
+
+
+        var limpa = document.getElementById('valueTest1').value = '';
+        var limpa = document.getElementById('valueTest2').value = '';
+    }   
+</script>
