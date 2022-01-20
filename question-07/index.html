@@ -44,20 +44,24 @@
         if(workedHours && valueHour > 0) {
             var normalValue = Number(valueHour) * 160;
         
-            var extraValue = Number(valueHour) * Number(0.5) + Number(valueHour);
-            console.log(extraValue)
-            var totalExtraValue = Number(extraValue) * Number(workedHours);
+            var extraHours = Number(workedHours) - 160; 
+            
+            var valueExtraHours = Number(valueHour) * 0.5;
+            
+            var totalHoursExtra = (Number(extraHours) * Number(valueExtraHours) + normalValue);
+            
+            
         } else {
             alert("Atenção não é possível calcular valores negativos")
         }
     
 
-        if (workedHours == 160) {
-            answer.innerHTML = `Valor total recebido por horas trabalhadas ${new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRl",}).format(normalValue)}`;
+         if (workedHours == 160) {
+           answer.innerHTML = `Valor total recebido por horas trabalhadas ${new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRl",}).format(normalValue)}`;
         }
 
         if (workedHours > 160) {
-            answer.innerHTML = `Valor total recebido por horas trabalhadas ${new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRl",}).format(totalExtraValue)}`; 
+            answer.innerHTML = `Valor total recebido por horas trabalhadas ${new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRl",}).format(totalHoursExtra)}`; 
         }
 
         if (workedHours < 160 ) {

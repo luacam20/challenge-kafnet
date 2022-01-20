@@ -46,11 +46,37 @@
         var sideAC = Number(sideA) + Number(sideC);
         var sideBC = Number(sideB) + Number(sideC); 
 
-        if (sideAB && sideAC && sideBC > sideA && sideB && sideC) {
-            answer.innerHTML = `Os lados com os valores ${sideA}, ${sideB}, ${sideC}: formam um triângulo`;
-        } else {
-            answer.innerHTML = `Os lados com os valores ${sideA}, ${sideB}, ${sideC}: não formam um triângulo`;
+        function ab() {
+            if (sideAB > sideC) {
+                return true;
+            } else {
+               return false;
+            }
         }
+
+        function ac() {
+            if (sideAC > sideB) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function bc() {
+            if (sideBC > sideC) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        if (ab() && bc() && ac() == true) {
+            answer.innerHTML = `As medidas ${sideA}, ${sideB}, ${sideC}: formam um triângulo`
+        } else {
+            answer.innerHTML = `As medidas ${sideA}, ${sideB}, ${sideC}: não formam um triângulo`
+        }
+
+        console.log(ab(), ac(), bc())
 
         var limpa = document.getElementById('sideA').value = '';
         var limpa = document.getElementById('sideB').value = '';
